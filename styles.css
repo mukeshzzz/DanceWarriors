@@ -246,12 +246,13 @@
     text-align: center;
     font-size: 35px;
     font-weight: 700;
-    color: rgb(252, 71, 252);
- }
-
- .about h2 span {
+    /* color: rgb(252, 71, 252); */
     color: rgb(255, 255, 104);
  }
+
+ /* .about h2 span {
+    color: rgb(255, 255, 104);
+ } */
 
  .about p {
     text-align: center;
