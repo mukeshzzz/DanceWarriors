@@ -4,3 +4,6 @@
   // }).catch(err => {
   //   console.error("tsParticles error:", err);
   // });
+
+
+console.log("hello world");
