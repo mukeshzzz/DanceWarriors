@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Paytone+One&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
@@ -94,7 +97,7 @@ body {
 
 .landing {
   position: relative;
-  height: 100vh;
+  height: 100vh;  
   background: url('assets/landing.jpg') no-repeat center center/cover;
   display: flex;
   align-items: center;
@@ -114,11 +117,16 @@ body {
 }
 
 .text-content h1 {
+  font-family: "Abril Fatface", serif;
+  backdrop-filter: blur(4px);
   font-size: 3rem;
   margin-bottom: 1rem;
 }
 
 .text-content p {
+  font-family: 'Courier New', Courier, monospace;
+  backdrop-filter: blur(10px);
+  font-weight: 600  ;
   font-size: 1.2rem;
   max-width: 600px;
   margin: 0 auto;
