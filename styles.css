@@ -278,3 +278,58 @@ body {
 .master-photo-wrapper:hover .main-photo {
   opacity: 0;
 }
+
+.marquee-effect {
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #c9c9c9;;
+    color: rgb(0, 0, 0);
+    padding: 1rem 0;
+    margin: 0;
+  }
+
+.classes-section {
+    background-color: #ffffff;
+    color: #353535;
+    padding: 4rem 2rem;
+    text-align: center;
+  }
+
+  .classes-section h2 {
+    font-size: 2.5rem;
+    color: #353535;
+    margin-bottom: 1rem;
+  }
+
+  .classes-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+
+  .classes-content ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .classes-content ul li {
+    padding: 0.5rem 0;
+    font-weight: 500;
+  }
+
+  .classes-content a {
+    color: #ffc107;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .master-profile {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .master-bio {
+      text-align: center;
+    }
+  }
