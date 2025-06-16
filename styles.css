@@ -323,7 +323,7 @@ body {
     text-decoration: underline;
   }
 
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     .master-profile {
       flex-direction: column;
       text-align: center;
@@ -332,4 +332,4 @@ body {
     .master-bio {
       text-align: center;
     }
-  }
+  } */
