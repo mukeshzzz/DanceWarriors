@@ -329,14 +329,3 @@ body {
     color: #ffc107;
     text-decoration: underline;
   }
-
-  /* @media (max-width: 768px) {
-    .master-profile {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .master-bio {
-      text-align: center;
-    }
-  } */
