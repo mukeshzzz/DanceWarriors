@@ -116,7 +116,9 @@ body {
 
 .landing {
   position: relative;
-  height: 100vh;
+  height: 100svh; /* new unit: Small Viewport Height (better on mobile) */
+  max-height: 100dvh; /* dynamic vh for newer browsers */
+  min-height: 100vh; /* fallback for older ones */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,7 +148,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 90%;
   object-fit: cover;
   z-index: -1;
 }
@@ -155,7 +157,6 @@ body {
   font-family: "Abril Fatface", serif;
   /* backdrop-filter: blur(4px); */
   font-size: 3rem;
-  margin-bottom: 1rem;
 }
 
 .text-content p {
@@ -191,6 +192,11 @@ body {
   border-radius: 10px;
   font-weight: 700;
   transform: scale(1.05);
+}
+
+.text-content button a {
+  text-decoration: none;
+  color: #3f3f3f;
 }
 
 /* Responsive adjustments */
