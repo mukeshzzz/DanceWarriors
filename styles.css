@@ -116,9 +116,8 @@ body {
 
 .landing {
   position: relative;
-  height: 100svh; /* new unit: Small Viewport Height (better on mobile) */
-  max-height: 100dvh; /* dynamic vh for newer browsers */
-  min-height: 100vh; /* fallback for older ones */
+  height: 100vh; /* new unit: Small Viewport Height (better on mobile) */
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,7 +153,8 @@ body {
 }
 
 .text-content h1 {
-  font-family: "Abril Fatface", serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
   /* backdrop-filter: blur(4px); */
   font-size: 3rem;
 }
