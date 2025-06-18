@@ -120,7 +120,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #494949;
+  color: #3f3f3f;
   /* margin-left: 40px;
   margin-right: 40px; */
   padding-left: 20px;
@@ -159,7 +159,7 @@ body {
 }
 
 .text-content p {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Poppins", sans-serif;
   /* backdrop-filter: blur(10px); */
   font-weight: 600;
   font-size: 1.2rem;
