@@ -1,3 +1,4 @@
-<h2>Dance Warriors Studio</h2>
-<br>
-<p>Live preview of the website: https://dancewarriors.netlify.app/</p>
+<h1><b>Dance Warriors Studio :</b></h1>
+<h4>Visit this Website for the preview :</h4>
+<b>Website :</b> <strong>https://dancewarriors.netlify.app/</strong>
+                                                                                   
