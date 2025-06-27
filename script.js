@@ -27,3 +27,55 @@ document.querySelectorAll('.nav-links a').forEach(link => {
       });
     });
   });
+
+   const form = document.getElementById("contactForm");
+  const toast = document.getElementById("toast");
+
+  function showToast(message, type = "success") {
+    toast.textContent = message;
+    toast.style.backgroundColor = type === "error" ? "#ff3b30" : "#1c1c1e";
+    toast.classList.add("show");
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 4000);
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    const payload = {
+      content:
+        "```" +
+        `📩 DanceWarriors User Request:\n\n` +
+        `Name     :     ${name}\n` +
+        `Email    :     ${email}\n` +
+        `Message  :     ${message}` +
+        "```"
+    };
+
+    const webhookURL = "https://discordapp.com/api/webhooks/1387832915584352398/uKsbtaP6xK-75J7JrzkkPD2i5Gw_LCiAGg1Efo0LaNTb9TJBlF66Dw6YypwGJOvXM95i"; // 🔁 Replace with your webhook URL
+
+    try {
+      const response = await fetch(webhookURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
+        showToast("✅ Message sent successfully!");
+        form.reset();
+      } else {
+        showToast("❌ Failed to send message.", "error");
+      }
+    } catch (error) {
+      showToast("⚠️ An error occurred. See console.", "error");
+      console.error("Discord webhook error:", error);
+    }
+  });
