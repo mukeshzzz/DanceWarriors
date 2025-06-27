@@ -19,7 +19,6 @@
       <li><a href="#landing">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#classes">Classes</a></li>
-      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="hamburger" id="hamburger">
@@ -148,13 +147,12 @@
   </section>
 
 
-  <section class="gallery" id="gallery">
+  <!-- <section class="gallery" id="gallery">
     <h1>Gallery</h1>
     <br>
 
     <div class="gallery-grid">
 
-      <!-- Reel 1 -->
       <div class="gallery-item">
         <video controls muted>
           <source src="assets/reel1.mp4" type="video/mp4" />
@@ -162,21 +160,19 @@
         </video>
       </div>
 
-      <!-- Reel 2 -->
       <div class="gallery-item">
         <video controls muted>
           <source src="assets/reel2.mp4" type="video/mp4" />
         </video>
       </div>
 
-      <!-- Reel 3 -->
       <div class="gallery-item">
         <video controls muted>
           <source src="assets/reel3.mp4" type="video/mp4" />
         </video>
       </div>
 
-    </div>
+    </div> 
 
     <br>
     <br>
@@ -190,7 +186,7 @@
       dedication of our dancers. Whether you're a beginner or a seasoned performer, these glimpses will show you the
       fun, creativity, and community we bring to every class. Dive in and feel the rhythm!
     </p>
-  </section>
+  </section>-->
 
   <br>
   <br>
@@ -200,19 +196,23 @@
   </header>
 
   <section class="contact-section">
-    <form class="contact-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required />
+  <form class="contact-form" id="contactForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required />
 
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
 
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast"></div>
+
 
 
   <div class="address-list">
@@ -247,7 +247,6 @@
         <li><a href="#landing">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#classes">Classes</a></li>
-        <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
