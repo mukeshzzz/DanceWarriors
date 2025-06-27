@@ -498,6 +498,7 @@ h1 {
 
 .contact-form input,
 .contact-form textarea {
+  font-family: 'Courier New', Courier, monospace;
   padding: 10px;
   font-size: 1rem;
   border: none;
@@ -679,8 +680,8 @@ h1 {
   display: flex;
   justify-content: space-between;
   gap: 60px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 40px;
+  margin-right: 40px;
   color: #3f3f3f;
 }
 
@@ -713,4 +714,25 @@ h1 {
     width: 100%;
     flex: none;
   }
+}
+
+.toast {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1c1c1e;
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  transition: top 0.5s ease, opacity 0.5s ease;
+  z-index: 9999;
+  opacity: 0;
+}
+.toast.show {
+  top: 30px;
+  opacity: 1;
 }
