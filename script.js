@@ -60,7 +60,7 @@ form.addEventListener("submit", async (e) => {
       "```"
   };
 
-  const webhookURL = "https://discordapp.com/api/webhooks/1387832915584352398/uKsbtaP6xK-75J7JrzkkPD2i5Gw_LCiAGg1Efo0LaNTb9TJBlF66Dw6YypwGJOvXM95i"; // replace with your real webhook URL
+  const webhookURL = "https://discordapp.com/api/webhooks/1388780153315790898/nsDOtCsSCv-OyD_SPLcJdMs5FrNAI_lB08UuGSP5-WpKNk9e-8jXw0jeiHoanckWRZez"; // replace with your real webhook URL
 
   try {
     const response = await fetch(webhookURL, {
