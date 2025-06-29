@@ -27,6 +27,15 @@ Welcome to **DanceWarriors**, a simple and elegant dance studio landing page bui
 
 ---
 
+## 📦 How to Run
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mukeshzzz/dancewarriors.git
+
+
+---
+
 ## 📌 Note
 
 > 📥 **Form Submission Webhook**  
@@ -35,12 +44,3 @@ To enable contact form functionality, **paste your webhook URL** (e.g., from For
 ```js
 // Replace this with your own webhook URL
 const webhookURL = "https://your-form-webhook-url.com";
-<br>
-
----
-
-## 📦 How to Run
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/mukeshzzz/dancewarriors.git
