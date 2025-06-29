@@ -27,6 +27,15 @@ Welcome to **DanceWarriors**, a simple and elegant dance studio landing page bui
 
 ---
 
+## 📌 Note
+
+> 📥 **Form Submission Webhook**  
+To enable contact form functionality, **paste your webhook URL** (e.g., from FormSubmit, Netlify Forms, or your custom backend) in the `script.js` file:
+
+```js
+// Replace this with your own webhook URL
+const webhookURL = "https://your-form-webhook-url.com";
+
 ## 📦 How to Run
 
 1. Clone the repository:
