@@ -13,7 +13,7 @@ Welcome to **DanceWarriors**, a simple and elegant dance studio landing page bui
 ## ✨ Features
 
 - Responsive landing page for desktop and mobile
-- Confetti animation
+- Confetti animation using JS
 - Marquee with motivational dance quotes
 
 ---
@@ -31,4 +31,4 @@ Welcome to **DanceWarriors**, a simple and elegant dance studio landing page bui
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/dancewarriors.git
+   git clone https://github.com/mukeshzzz/dancewarriors.git
