@@ -23,11 +23,10 @@ Welcome to **DanceWarriors**, a simple and elegant dance studio landing page bui
 
 ---
 
-## 📦 How to Run
+## 🙋‍♂️ Author
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/mukeshzzz/dancewarriors.git
+Made with ❤️ by [Mukesh](https://github.com/mukeshzzz)  
+🛠️ Site made by Mukesh
 
 
 ---
