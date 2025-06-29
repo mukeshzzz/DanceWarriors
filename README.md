@@ -1,7 +1,3 @@
-<!-- <h1><b>Dance Warriors Studio :</b></h1>
-<h4>Visit this Website for the preview :</h4>
-<b>Website :</b> <strong>https://dancewarriors.netlify.app/</strong>
-                                                                                    -->
 # 💃 DanceWarriors Website
 
 Welcome to **DanceWarriors**, a simple and elegant dance studio landing page built with HTML, CSS, and JavaScript. This site showcases the studio's mission, class details, contact info, and animations.
@@ -43,14 +39,8 @@ To enable contact form functionality, **paste your webhook URL** (e.g., from For
 
 // Replace this with your own webhook URL
 
-```bash
+```js
 const webhookURL = "https://your-form-webhook-url.com";
-
----
-
-🙋‍♂️ Author
-
-<p>Made by <a href="https://mukeshthedev.netlify.app\">Mukesh ❤️</a></p>
 
 
 
