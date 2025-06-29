@@ -25,8 +25,7 @@ Welcome to **DanceWarriors**, a simple and elegant dance studio landing page bui
 
 ## 🙋‍♂️ Author
 
-🛠️ Site made by [❤️Mukesh](https://github.com/mukeshzzz)  
-
+🛠️ Site made by [Mukesh❤️](https://github.com/mukeshzzz)  
 
 
 ---
