@@ -13,12 +13,8 @@ Welcome to **DanceWarriors**, a simple and elegant dance studio landing page bui
 ## ✨ Features
 
 - Responsive landing page for desktop and mobile
-- Particles.js animated background
-- Glassmorphism UI style
-- Animated navbar with hamburger menu
-- Contact and About sections
+- Confetti animation
 - Marquee with motivational dance quotes
-- Scroll animations using AOS
 
 ---
 
@@ -27,8 +23,6 @@ Welcome to **DanceWarriors**, a simple and elegant dance studio landing page bui
 - HTML5  
 - CSS3  
 - JavaScript  
-- AOS (Animate on Scroll)  
-- tsParticles  
 - Netlify (deployment)
 
 ---
