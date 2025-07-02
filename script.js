@@ -60,7 +60,7 @@ form.addEventListener("submit", async (e) => {
       "```"
   };
 
-  const webhookURL = ""; // replace with your real webhook URL
+  const webhookURL = "YOUR_WEBHOOK_URL"; // replace with your real webhook URL
 
   try {
     const response = await fetch(webhookURL, {
