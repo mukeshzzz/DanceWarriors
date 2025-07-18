@@ -11,6 +11,7 @@ Welcome to **DanceWarriors**, a simple and elegant dance studio landing page bui
 - Responsive landing page for desktop and mobile
 - Confetti animation using JS
 - Marquee with motivational dance quotes
+- Form validation using discord webhook
 
 ---
 
