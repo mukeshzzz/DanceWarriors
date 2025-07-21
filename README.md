@@ -1,6 +1,6 @@
 # 💃 DanceWarriors Website
 
-Welcome to **DanceWarriors**, a simple and elegant dance studio landing page built with HTML, CSS, and JavaScript. This site showcases the About the studio & Master, class details, contact info and animations.
+Welcome to **DanceWarriors**, a simple and elegant dance studio landing page built with HTML, CSS, and JavaScript. This site showcases the about the studio & Master, class details, contact info and animations.
 
 🔗 **Live Demo:** [dancewarriors.netlify.app](https://dancewarriors.netlify.app)
 
