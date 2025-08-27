@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DanceWarriors — Dance Studio</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <style>
+    /* True dark overrides */
+    [data-bs-theme="dark"] body {
+      background-color: #000000;
+      color: #e6e6e6;
+    }
+    [data-bs-theme="dark"] .border {
+      border-color: #1f1f1f !important;
+    }
+    [data-bs-theme="dark"] .navbar {
+      background-color: #000000 !important;
+    }
+    [data-bs-theme="dark"] .card,
+    [data-bs-theme="dark"] .rounded-4 {
+      background-color: #0a0a0a !important;
+    }
+
+    /* Light theme */
+    [data-bs-theme="light"] body {
+      background-color: rgb(240, 240, 240);
+      color: #353535;
+    }
+
+    body {
+      font-family: "Outfit",sans-serif;
+    }
+
+    /* Utilities */
+    .navbar-blur {
+      backdrop-filter: saturate(180%) blur(6px);
+    }
+
+    /* Hero background */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Floating theme toggle button */
+    .theme-fab {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1100;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .35);
+    }
+
+    /* Strong contrast buttons */
+    .btn-contrast {
+      font-weight: 700;
+      border-radius: .75rem;
+      padding: .7rem 1rem;
+    }
+    [data-bs-theme="dark"] .btn-contrast {
+      background: #e9e9e9;
+      color: #000;
+      border: 1px solid #1f1f1f;
+    }
+    [data-bs-theme="light"] .btn-contrast {
+      background: #3b3b3b;
+      color: #fff;
+      border: 1px solid #cfcfcf;
+    }
+
+
+    .navbar {
+      padding: 17px;
+    }
+
+    .navbar .container a {
+      font-size: 24px;
+    }
+
+    .navbar .container #nav ul li a {
+      font-size: 20px;
+      padding-left: 30px;
+      gap: 50px;
+    } 
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top navbar-blur border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">DanceWarriors</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#classes">Classes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" class="hero text-center text-light" style="background-image:url('assets/background.png');">
+    <div class="container">
+      <h1 class="display-5 fw-bold">“Dance is the hidden language of the soul.”</h1>
+      <p class="lead opacity-75 mx-auto" style="max-width:800px">
+        Learn movement, build coordination, and deepen understanding across diverse styles.
+      </p>
+      <div class="d-flex gap-2 justify-content-center flex-wrap mt-3">
+        <a class="btn btn-contrast" href="#classes">Classes</a>
+        <a class="btn btn-outline-light btn-contrast" href="https://chat.whatsapp.com/JRU1rZndF0T8zrfCUVZzbW">Join now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="h1 fw-bold text-center mb-3">
+        About <span class="text-warning">DanceWarriors</span>
+      </h2>
+      <p class="text-secondary text-center mx-auto mb-4" style="max-width:900px">
+         DanceWarriors Studio is not just an place to dance, Were you can learn disipline and creativity of movement— Let your passion take to the stage! . Our instructors bring styles from Bollywood to Hip-Hop, and Freestyle to Contemporary. 
+      </p>
+       <p class="text-secondary text-center mx-auto mb-4" style="max-width:900px">
+Our studio is open to dancers of all levels — whether you're just starting or ready to take center stage. We believe dance empowers expression, health, and joy.       </p>
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6">
+          <img src="assets/dance-master.jpg" class="w-100 rounded-4 border" alt="Lead Instructor">
+        </div>
+        <div class="col-md-6">
+          <h3 class="h3 fw-bold">Meet Our Dance Master – B . Kamalesh</h3>
+          <p class="text-secondary">
+            With over 7 years of experience in the world of dance, Kamalesh is the heart of DanceWarriors Studio. Trained in Hip-Hop, Contemporary, and Bollywood styles, he brings unmatched energy, discipline, and creativity to every session. His teaching approach blends fun with technique, inspiring dancers of all levels to push their limits while enjoying the journey. Known for his powerful choreography and patient mentorship, Kamalesh has guided hundreds of students to find confidence, rhythm, and their own unique style on the dance floor. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Classes -->
+  <section id="classes" class="py-5">
+    <div class="container">
+      <h2 class="h1 fw-bold text-center mb-4">
+        Our <span class="text-warning">Classes</span>
+      </h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="p-4 rounded-4 border h-100">
+            <h4 class="fw-bold">Friday :</h4>
+            <p class="mb-0 text-secondary">Evening 5.00pm to 6.30pm</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 rounded-4 border h-100">
+            <h4 class="fw-bold">Saturday :</h4>
+            <p class="mb-0 text-secondary">Evening 4.30pm to 6.30pm</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 rounded-4 border h-100">
+            <h4 class="fw-bold">Sunday :</h4>
+            <p class="mb-0 text-secondary">Morning 10.00am to 12.00pm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="h1 fw-bold text-center mb-4">
+        Contact <span class="text-warning">Us</span>
+      </h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <form id="contactForm" class="p-4 rounded-4 border">
+            <div class="mb-3">
+              <label class="form-label fw-semibold" for="name">Name</label>
+              <input id="name" class="form-control" type="text" placeholder="Full Name" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold" for="email">Email</label>
+              <input id="email" class="form-control" type="email" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold" for="message">Message</label>
+              <textarea id="message" class="form-control" rows="5" placeholder="Share your goals..." required></textarea>
+            </div>
+            <button class="btn btn-contrast" type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-top py-3">
+    <div class="container text-center small">
+      © <span id="year"></span> DanceWarriors
+    </div>
+  </footer>
+
+  <!-- Floating theme toggle -->
+  <button id="themeFab" class="theme-fab btn btn-secondary">
+    <span id="themeFabIcon" class="me-1">🌙</span>
+    <!-- <span id="themeFabLabel">Dark</span> -->
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Script -->
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Elements
+    const htmlEl = document.documentElement;
+    const hero = document.getElementById("home");
+    const fab = document.getElementById("themeFab");
+    const fabI = document.getElementById("themeFabIcon");
+    const fabL = document.getElementById("themeFabLabel");
+
+    // Enforce true dark mode
+    function enforceTrueDark() {
+      if (htmlEl.getAttribute("data-bs-theme") === "dark") {
+        document.body.style.backgroundColor = "#000000";
+        const nav = document.querySelector(".navbar");
+        if (nav) nav.style.backgroundColor = "#000000";
+      } else {
+        document.body.style.backgroundColor = "";
+        const nav = document.querySelector(".navbar");
+        if (nav) nav.style.backgroundColor = "";
+      }
+    }
+
+    // Apply theme
+    function applyTheme(mode) {
+      htmlEl.setAttribute("data-bs-theme", mode);
+
+      if (mode === "light") {
+        hero.style.filter = "invert(80%)";
+        fabI.textContent = "🌞";
+      //   fabL.textContent = "Light";
+      } else {
+        hero.style.filter = "none";
+        fabI.textContent = "🌙";
+      //   fabL.textContent = "Dark";
+      }
+
+      localStorage.setItem("dw-bs-theme", mode);
+      enforceTrueDark();
+    }
+
+    // Init theme
+    applyTheme(localStorage.getItem("dw-bs-theme") || "dark");
+
+    // Toggle button
+    fab.addEventListener("click", () => {
+      const next = htmlEl.getAttribute("data-bs-theme") === "dark" ? "light" : "dark";
+      applyTheme(next);
+    });
+
+    // Contact form demo
+    document.getElementById("contactForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Message sent (demo).");
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
