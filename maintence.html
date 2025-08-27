@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site Under Maintenance</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a;
+            color: #000;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: grey;
+            /* Yellow */
+            margin-bottom: 20px;
+        }
+
+        p.message-box {
+            background-color: grey;
+            /* Light Yellow */
+            border: 2px dashed #000;
+            padding: 20px 25px;
+            border-radius: 10px;
+            max-width: 600px;
+            font-size: 1.1rem;
+            color: #000;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .progress-animation {
+            font-size: 1.1rem;
+            color: grey;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            background-color: grey;
+            border-radius: 50%;
+            animation: bounce 1s infinite ease-in-out;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            80%,
+            100% {
+                transform: scale(0);
+            }
+
+            40% {
+                transform: scale(1);
+            }
+        }
+
+        footer {
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        footer a {
+            color: grey;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+
+        .maintenance-loader {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: grey;
+            border: 1px solid grey;
+            border-radius: 60px;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 8px;
+        }
+
+        .gear-icon svg {
+            animation: rotate 1.2s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <h1>⚠️ Site Under Maintenance</h1>
+        <p class="message-box">
+            This site is currently undergoing scheduled upgrades.<br>
+        Thank you for your patience and understanding.
+        </p>
+
+        <div class="maintenance-loader">
+            <div class="gear-icon">
+                <svg viewBox="0 0 24 24" width="40" height="40" fill="#6c757d" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M19.43 12.98c.04-.32.07-.66.07-1s-.03-.68-.07-1l2.11-1.65a.5.5 0 00.12-.63l-2-3.46a.5.5 0 00-.6-.22l-2.49 1a7.1 7.1 0 00-1.73-1l-.38-2.65A.5.5 0 0014 2h-4a.5.5 0 00-.5.42l-.38 2.65a7.12 7.12 0 00-1.73 1l-2.49-1a.5.5 0 00-.6.22l-2 3.46a.5.5 0 00.12.63L4.57 11c-.04.32-.07.66-.07 1s.03.68.07 1l-2.11 1.65a.5.5 0 00-.12.63l2 3.46c.14.25.44.35.7.22l2.49-1c.54.42 1.12.77 1.73 1l.38 2.65A.5.5 0 0010 22h4a.5.5 0 00.5-.42l.38-2.65c.61-.23 1.19-.58 1.73-1l2.49 1c.26.13.56.03.7-.22l2-3.46a.5.5 0 00-.12-.63l-2.11-1.65zM12 15.5A3.5 3.5 0 1115.5 12 3.5 3.5 0 0112 15.5z" />
+                </svg>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; 2025 <a href="https://mukeshthedev.netlify.app">mukeshthedev</a>
+    </footer>
+
+</body>
+
+</html>
