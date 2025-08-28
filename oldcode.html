@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#125083">
+  <title>Dance Warriors Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <link rel="icon" href="assets/logo.jpeg">
+  <link rel="stylesheet" href="styleS.css" />
+</head>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* side scroll */
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+  background-color: #ffffff;
+  color: #353535;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #353535;
+}
+
+.nav-links {
+  list-style: none;
+  font-weight: 550;
+  font-size: 18px;
+  display: flex;
+  gap: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-top: -7px;
+  z-index: 1;
+}
+
+.nav-links li a {
+  border: 1px solid #ffffff;
+  padding: 8px 15px;
+  text-decoration: none;
+  /* font-weight: 600; */
+  color: #353535;
+  transition: color 0.3s;
+  border-radius: 5px;
+}
+
+.nav-links li a:hover {
+  transition: 0.4s ease;
+  background-color: rgb(194, 194, 194);
+  /* box-shadow: 0 0 12px 3px rgb(194, 194, 194); */
+  border: 1px solid rgb(194, 194, 194);
+  color: #000000;
+  padding: 8px 15px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #000000;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #ffffff;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    max-height: 0;
+    gap: 2rem;
+    transition: max-height 0.4s ease;
+    z-index: 99;
+  }
+
+  .nav-links.active {
+    max-height: 300px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger.toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+}
+
+.landing {
+  position: relative;
+  height: 100svh; /* more accurate on mobile */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3f3f3f;
+  /* padding: 0 20px; */
+  overflow: hidden;
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* take full height */
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+  .landing {
+    height: auto;
+    min-height: 100svh;
+  }
+
+  .background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .overlay {
+    padding: 1rem;
+  }
+
+}
+
+
+.text-content h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  /* backdrop-filter: blur(4px); */
+  font-size: 3rem;
+}
+
+.text-content p {
+  font-family: "Poppins", sans-serif;
+  /* backdrop-filter: blur(10px); */
+  font-weight: 600;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.text-content button {
+  padding-left: 15px;
+  padding-top: 8px;
+  padding-right: 15px;
+  padding-bottom: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  border: 1px solid rgb(206, 206, 206);
+  border-radius: 10px;
+  background-color: rgb(206, 206, 206);
+}
+
+.text-content button:hover {
+  padding-left: 15px;
+  padding-top: 8px;
+  padding-right: 15px;
+  padding-bottom: 8px;
+  box-shadow: 0 0 12px 3px rgb(194, 194, 194);
+  border: 1px solid rgb(194, 194, 194);
+  background-color: rgb(194, 194, 194);
+  border-radius: 10px;
+  font-weight: 700;
+  transform: scale(1.05);
+}
+
+.text-content button a {
+  text-decoration: none;
+  color: #3f3f3f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .text-content h1 {
+    font-size: 2rem;
+  }
+
+  .text-content p {
+    font-size: 1rem;
+  }
+
+  .landing {
+    margin-left: -40px;
+    margin-right: -40px;
+  }
+
+  .classes-content ul .divs{
+    display: inline;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+.about-section {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #353535;
+  margin-bottom: 1.5rem;
+}
+
+.about-section h2 span {
+  color: #ffc107;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.about-content p {
+  margin-bottom: 1.5rem;
+}
+
+.master-profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+  flex-direction: row;
+}
+
+.master-photo {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #000000;
+}
+
+.master-bio {
+  max-width: 600px;
+}
+
+.master-bio h3 {
+  color: #353535;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.master-bio p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.master-photo-wrapper {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #000000;
+}
+
+.master-photo-wrapper img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+
+.hover-photo {
+  opacity: 0;
+}
+
+.master-photo-wrapper:hover .hover-photo {
+  opacity: 1;
+}
+
+.master-photo-wrapper:hover .main-photo {
+  opacity: 0;
+}
+
+.marquee-effect {
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #c9c9c9;
+  color: rgb(0, 0, 0);
+  padding: 1rem 0;
+  margin: 0;
+}
+
+
+.classes-section {
+  background-color: #ffffff;
+  color: #353535;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.classes-section h2 {
+  font-size: 2.5rem;
+  color: #353535;
+  margin-bottom: 1rem;
+}
+
+.classes-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+.classes-content ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.classes-content ul li {
+  padding: 20px;
+  font-weight: 500;
+  background-color: rgb(201, 201, 201);
+  border-radius: 5px;
+  flex: 1 1 30%; /* allow items to shrink on small screens */
+  min-width: 200px;
+  text-align: center;
+}
+
+.classes-content ul li:hover {
+  transition: 0.3s;
+  transform: scale(1.05);
+  border: 1px solid rgb(175, 175, 175);
+  box-shadow: 0 0 12px 3px rgb(175, 175, 175);
+}
+
+@media (max-width: 768px) {
+  .classes-content ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .classes-content ul li {
+    width: 100%;
+    flex: none;
+  }
+}
+
+.classes-content a {
+  color: #ffc107;
+  text-decoration: underline;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #353535;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.gallery-item {
+  background: #222;
+  padding: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+}
+
+.gallery-item video {
+  width: 100%;
+  aspect-ratio: 9 / 16; /* reels format */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.gallery-description {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #353535;
+  text-align: center;
+  padding: 0 1rem;
+  font-weight: 500;
+}
+
+
+/* Responsive text */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Header with h1 on white background */
+.contact-header {
+  background-color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.contact-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #353535;
+}
+
+/* Contact section styling */
+.contact-section {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  /* background-color: #ebebeb; */
+  border: 1px solid rgb(126, 126, 126);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: 'Courier New', Courier, monospace;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #d4d4d4;
+  color: #000000;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #000000;
+}
+
+.contact-form button {
+  font-family: "Poppins", sans-serif;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  background: #3b3b3b;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: #000000;
+}
+
+@media (max-width: 600px) {
+  .contact-header h1 {
+    font-size: 2rem;
+  }
+
+  .contact-section {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+}
+.address {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  color: #000000;
+  gap: 20px;
+  font-family: sans-serif;
+}
+
+.address div {
+  flex: 1 1 30%;
+  min-width: 250px;
+}
+
+.address span {
+  font-weight: 700;
+  color: #303030;
+}
+
+/* Responsive for small screens */
+@media (max-width: 600px) {
+  .address {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .address div {
+    width: 100%;
+  }
+}
+
+
+.site-footer {
+  background-color: rgb(224, 224, 224);
+  color: #3d3d3d;
+  padding: 3rem 1rem 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.footer-brand h2 {
+  color: #3d3d3d;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+ color: #3d3d3d;
+  max-width: 250px;
+}
+
+.footer-links h3,
+.footer-social h3 {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #3d3d3d;
+  transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: black;
+}
+
+
+.site-footer .footer-container .footer-social .social-icons {
+  text-align: center;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #353535;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #000000; /* WhatsApp green */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #3d3d3d;
+}
+
+.footer-bottom p:last-child {
+  margin-top: 0.3rem;
+  color: #3d3d3d;
+}
+
+.footer-bottom p a {
+  text-decoration: none;
+  color: #3d3d3d;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-icons a {
+    margin: 0 0.5rem;
+  }
+}
+
+
+.address-list,
+.address-one  {
+  list-style: none;
+  padding: 0;
+  align-items: center ;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  margin-left: 40px;
+  margin-right: 40px;
+  color: #3f3f3f;
+}
+
+.address-list li,
+.address-one li {
+  padding: 20px;
+  font-weight: 500;
+  background-color: rgb(219, 219, 219);
+  border-radius: 5px;
+  flex: 1 1 30%; /* allow items to shrink on small screens */
+  min-width: 200px;
+  text-align: center;
+}
+
+.address-list li:hover,
+.address-one li:hover {
+  transition: 0.3s;
+  transform: scale(1.05);
+  border: 1px solid rgb(175, 175, 175);
+  box-shadow: 0 0 12px 3px rgb(175, 175, 175);
+}
+
+@media (max-width: 768px) {
+  .address-list  {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .address-list li {
+    width: 100%;
+    flex: none;
+  }
+}
+
+.toast {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1c1c1e;
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 15px;
+  transition: top 0.5s ease, opacity 0.5s ease;
+  z-index: 9999;
+  opacity: 0;
+}
+.toast.show {
+  top: 30px;
+  opacity: 1;
+}
+
+</style>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">DANCEWARRIORS</div>
+    <ul class="nav-links">
+      <li><a href="#landing">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#classes">Classes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+
+
+  <section class="landing" id="landing">
+
+    <!-- Background Video -->
+    <video autoplay muted class="background-video">
+      <source src="assets/landing-back3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="overlay">
+      <div class="text-content">
+        <h1>"Dance is the hidden language of your soul"</h1>
+        <br>
+        <p>
+          A dance class offers a unique blend of physical activity and creative expression. It provides an opportunity
+          to learn new movements, improve coordination, and develop a deeper understanding of various dance styles
+        </p>
+        <br><br>
+        <button><a href="https://chat.whatsapp.com/JRU1rZndF0T8zrfCUVZzbW" target="_blank">Join now</a></button>
+      </div>
+    </div>
+
+  </section>
+
+
+
+  <section id="about" class="about-section">
+    <div class="about-content">
+      <h2>About Studio</h2>
+      <p>
+        <b>DanceWarriors Studio</b> is not just an place to dance, Were you can learn disipline and creativity of
+        movement— Let your passion take to the stage! .
+        Our instructors bring styles from Bollywood to Hip-Hop, and Freestyle to Contemporary.
+      </p>
+      <p>
+        Our studio is open to dancers of all levels — whether you're just starting or ready to take center stage.
+        We believe dance empowers expression, health, and joy.
+      </p>
+    </div>
+
+    <div class="master-profile">
+      <div class="master-photo-wrapper">
+        <img src="assets/dance-master.jpg" alt="Dance Master" class="master-photo main-photo" />
+        <img src="assets/dance-master-hover.jpg" alt="Dance Master Hover" class="master-photo hover-photo" />
+      </div>
+
+      <div class="master-bio">
+        <h3>Meet Our Dance Master – <b>B . Kamalesh</b></h3>
+        <p>
+          With over 7 years of experience in the world of dance, Kamalesh is the heart of DanceWarriors Studio. Trained
+          in Hip-Hop,
+          Contemporary, and Bollywood styles, he brings unmatched energy, discipline, and creativity to every session.
+          His teaching approach blends fun with technique, inspiring dancers of all levels to push their limits while
+          enjoying the journey.
+          Known for his powerful choreography and patient mentorship, Kamalesh has guided hundreds of students to find
+          confidence,
+          rhythm, and their own unique style on the dance floor.
+        </p>
+        <br>
+        <p style="font-size: 22px; font-weight: 700; color: rgb(43, 43, 43);"> Master Profile <a
+            style="text-decoration: none; color: rgb(82, 82, 82); font-weight: 900;"
+            href="https://www.instagram.com/_kmz_07/"> <i class="fab fa-instagram"></i> Kamalesh</a> </p>
+      </div>
+    </div>
+  </section>
+
+  <br>
+
+  <marquee class="marquee-effect" behavior="scroll" direction="left">
+    ★
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    "Dance is the hidden language of the soul."
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    ★
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    "When you dance, your purpose is not to get to a certain place on the floor. It’s to enjoy each step along the way."
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    ★
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    "Great dancers are not great because of their technique, they are great because of their passion."
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    ★
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    "To watch us dance is to hear our hearts speak."
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    ★
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    "Dance enables you to find yourself and lose yourself at the same time."
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    ★
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  </marquee>
+
+  <br>
+  <br>
+
+
+
+  <section id="classes" class="classes-section">
+    <div class="classes-content">
+      <h2>Class Schedule</h2>
+      <p>Our regular classes are held on <strong>Friday</strong>, <strong>Saturday</strong>, and <strong>Sunday</strong>
+        every week.</p>
+      <p>Click here to join the group <a href="https://chat.whatsapp.com/JRU1rZndF0T8zrfCUVZzbW"
+          target="_blank">WhatsApp
+          group</a>.</p>
+      <br>
+
+      <ul class="classes-list">
+        <li><strong>Friday :</strong> Evening 5.00pm to 6.30pm</li>
+        <li><strong>Saturday :</strong> Evening 4.30pm to 6.30pm</li>
+        <li><strong>Sunday :</strong> Morning 10.00am to 12.00pm</li>
+      </ul>
+
+    </div>
+  </section>
+
+
+  <!-- <section class="gallery" id="gallery">
+    <h1>Gallery</h1>
+    <br>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <video controls muted>
+          <source src="assets/reel1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="gallery-item">
+        <video controls muted>
+          <source src="assets/reel2.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="gallery-item">
+        <video controls muted>
+          <source src="assets/reel3.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+    </div> 
+
+    <br>
+    <br>
+    <br>
+
+
+    <p class="gallery-description">
+      Welcome to our <b>Dance Class Gallery!</b> Here, we showcase some of our most energetic and inspiring moments.
+      These
+      reels capture the essence of our sessions — from graceful moves and rhythmic footwork to the passion and
+      dedication of our dancers. Whether you're a beginner or a seasoned performer, these glimpses will show you the
+      fun, creativity, and community we bring to every class. Dive in and feel the rhythm!
+    </p>
+  </section>-->
+
+  <br>
+  <br>
+
+  <header class="contact-header" id="contact">
+    <h1>Contact Us</h1>
+  </header>
+
+  <section class="contact-section">
+    <form class="contact-form" id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+
+
+  <div class="address-list">
+    <li><strong>Email-id :</strong> kamaleshbalaji1349@gmail.com </li>
+    <li><strong>Phone no:</strong> 7904512516</li>
+  </div>
+  <div class="address-one">
+    <li><strong>Address :</strong> PKC COMPLEX SHOLAVARAM REDHILLS CHENNAI 67 Near by sholavaram bustand</li>
+  </div>
+
+
+  <br>
+  <br>
+
+
+  <footer class="site-footer">
+    <div class="footer-container">
+
+
+      <div class="footer-brand">
+        <h2>Dance Warriors</h2>
+        <p>Feel the beat. Join the rhythm. Dance with us.</p>
+        <br>
+        <!-- <p style="font-weight: 400;"> Site made by <a style="text-decoration: none; color: rgb(54, 54, 54); font-weight: 600;" href="https://www.instagram.com/_tino_.x/"><i class="fab fa-instagram"></i> Sebastin</a></p> -->
+        <p>Team <a style="text-decoration: none; color: rgb(54, 54, 54); font-weight: 600;"
+            href="https://www.instagram.com/_tino_.x">Sebastin 🤝</a></p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#landing">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#classes">Classes</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+      </div>
+
+      <!-- Social Media -->
+      <div class="footer-social">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="https://chat.whatsapp.com/JRU1rZndF0T8zrfCUVZzbW" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/dance_warriors_studio/" target="_blank"><i
+              class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="footer-bottom">
+      <p> &copy; Made by <a href="https://mukeshthedev.netlify.app\">Mukesh ❤️</a></p>
+    </div>
+  </footer>
+
+
+  <script>
+
+   const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('toggle');
+  navLinks.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.querySelector('.nav-links');
+    hamburger.classList.remove('active');
+    nav.classList.remove('active');
+  });
+});
+
+
+  const videos = document.querySelectorAll("video");
+
+  videos.forEach(video => {
+    video.addEventListener("play", () => {
+      videos.forEach(otherVideo => {
+        if (otherVideo !== video) {
+          otherVideo.pause();
+        }
+      });
+    });
+  });
+
+
+
+
+const form = document.getElementById("contactForm");
+const toast = document.getElementById("toast");
+
+function showToast(message, type = "success") {
+  toast.textContent = message;
+  toast.style.backgroundColor = type === "error" ? "#ff3b30" : "#1c1c1e";
+  toast.classList.add("show");
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 4000);
+}
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  const payload = {
+    content:
+      "```" +
+      `📩 DanceWarriors User Request:\n\n` +
+      `Name     :     ${name}\n` +
+      `Email    :     ${email}\n` +
+      `Message  :     ${message}` +
+      "```"
+  };
+
+  const webhookURL = "YOUR_WEBHOOK_URL"; // replace with your real webhook URL
+
+  try {
+    const response = await fetch(webhookURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (response.ok) {
+      showToast("✅ Message sent successfully!");
+      form.reset();
+
+      // 🎉 Trigger confetti on success only
+      confetti({
+        particleCount: 150,
+        spread: 80,
+        origin: { y: 0.6 }
+      });
+    } else {
+      showToast("❌ Failed to send message.", "error");
+    }
+  } catch (error) {
+    showToast("⚠️ An error occurred. See console.", "error");
+    console.error("Discord webhook error:", error);
+  }
+});
+
+
+  </script>
+</body>
+
+</html>
