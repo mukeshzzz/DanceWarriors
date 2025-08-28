@@ -18,8 +18,9 @@ Welcome to **DanceWarriors**, a simple and elegant dance studio landing page bui
 ## 🔧 Tech Stack
 
 - HTML5  
-- CSS3  
-- JavaScript  
+- CSS3
+- JavaScript
+- Bootstrap (Framework) 
 - Netlify (deployment)
 
 ---
