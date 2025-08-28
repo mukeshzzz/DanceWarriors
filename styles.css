@@ -301,3 +301,12 @@
     from { bottom: 30px; opacity: 1; }
     to { bottom: 0; opacity: 0; }
   }
+
+  #about .container p {
+    font-size: 18px;
+  }
+
+  #reach-us .container h2 span {
+     font-family: "DM Serif Text", serif;
+      font-style: italic; 
+  }
