@@ -1,260 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#125083">
-  <title>Dance Warriors Studio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-  <link rel="icon" href="assets/logo.jpeg">
-  <link rel="stylesheet" href="styleS.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DanceWarriors - Studio</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Parisienne&display=swap"
+    rel="stylesheet">
+
+  <!-- Website Icon -->
+   <link rel="shortcut icon" href="assets/logo.jpeg" type="image/x-icon">
+
+  <!-- Styles -->
+   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <nav class="navbar">
-    <div class="logo">DANCEWARRIORS</div>
-    <ul class="nav-links">
-      <li><a href="#landing">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#classes">Classes</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top navbar-blur border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">DanceWarriors</a>
+
+
+      <div class="d-flex align-items-center ms-auto">
+        <button id="themeFab" class="theme-nav-btn me-2" aria-label="Toggle color mode" type="button">
+          <span id="themeFabIcon"><i class="fa-solid fa-moon"></i></span>
+        </button>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#classes">Classes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
 
-  <section class="landing" id="landing">
 
-    <!-- Background Video -->
-    <video autoplay muted class="background-video">
-      <source src="assets/landing-back3.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-
-    <div class="overlay">
-      <div class="text-content">
-        <h1>"Dance is the hidden language of your soul"</h1>
-        <br>
-        <p>
-          A dance class offers a unique blend of physical activity and creative expression. It provides an opportunity
-          to learn new movements, improve coordination, and develop a deeper understanding of various dance styles
-        </p>
-        <br><br>
-        <button><a href="https://chat.whatsapp.com/JRU1rZndF0T8zrfCUVZzbW" target="_blank">Join now</a></button>
-      </div>
-    </div>
-
-  </section>
-
-
-
-  <section id="about" class="about-section">
-    <div class="about-content">
-      <h2>About Studio</h2>
-      <p>
-        <b>DanceWarriors Studio</b> is not just an place to dance, Were you can learn disipline and creativity of
-        movement— Let your passion take to the stage! .
-        Our instructors bring styles from Bollywood to Hip-Hop, and Freestyle to Contemporary.
+  <!-- Hero -->
+  <header id="home" class="hero text-center text-light" style="background-image:url('assets/black.png');">
+    <div class="container">
+      <h1 class="display-4 fw-bold">“Dance is the hidden language of the soul.”</h1>
+      <p class="lead opacity-75 mx-auto" style="max-width:800px">
+        A dance class offers a unique blend of physical activity and creative expression. It provides an opportunity
+        to learn new movements, improve coordination, and develop a deeper understanding of various dance styles
       </p>
-      <p>
-        Our studio is open to dancers of all levels — whether you're just starting or ready to take center stage.
-        We believe dance empowers expression, health, and joy.
-      </p>
-    </div>
-
-    <div class="master-profile">
-      <div class="master-photo-wrapper">
-        <img src="assets/dance-master.jpg" alt="Dance Master" class="master-photo main-photo" />
-        <img src="assets/dance-master-hover.jpg" alt="Dance Master Hover" class="master-photo hover-photo" />
-      </div>
-
-      <div class="master-bio">
-        <h3>Meet Our Dance Master – <b>B . Kamalesh</b></h3>
-        <p>
-          With over 7 years of experience in the world of dance, Kamalesh is the heart of DanceWarriors Studio. Trained
-          in Hip-Hop,
-          Contemporary, and Bollywood styles, he brings unmatched energy, discipline, and creativity to every session.
-          His teaching approach blends fun with technique, inspiring dancers of all levels to push their limits while
-          enjoying the journey.
-          Known for his powerful choreography and patient mentorship, Kamalesh has guided hundreds of students to find
-          confidence,
-          rhythm, and their own unique style on the dance floor.
-        </p>
-        <br>
-        <p style="font-size: 22px; font-weight: 700; color: rgb(43, 43, 43);"> Master Profile <a
-            style="text-decoration: none; color: rgb(82, 82, 82); font-weight: 900;"
-            href="https://www.instagram.com/_kmz_07/"> <i class="fab fa-instagram"></i> Kamalesh</a> </p>
+      <div class="d-flex gap-2 justify-content-center flex-wrap mt-3">
+        <a class="btn btn-contrast" href="#classes">Classes</a>
+        <a class="btn btn-outline-light btn-contrast" href="https://chat.whatsapp.com/JRU1rZndF0T8zrfCUVZzbW">Join
+          now</a>
       </div>
     </div>
-  </section>
-
-  <br>
-
-  <marquee class="marquee-effect" behavior="scroll" direction="left">
-    ★
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    "Dance is the hidden language of the soul."
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    ★
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    "When you dance, your purpose is not to get to a certain place on the floor. It’s to enjoy each step along the way."
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    ★
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    "Great dancers are not great because of their technique, they are great because of their passion."
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    ★
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    "To watch us dance is to hear our hearts speak."
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    ★
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    "Dance enables you to find yourself and lose yourself at the same time."
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    ★
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-  </marquee>
-
-  <br>
-  <br>
-
-
-
-  <section id="classes" class="classes-section">
-    <div class="classes-content">
-      <h2>Class Schedule</h2>
-      <p>Our regular classes are held on <strong>Friday</strong>, <strong>Saturday</strong>, and <strong>Sunday</strong>
-        every week.</p>
-      <p>Click here to join the group <a href="https://chat.whatsapp.com/JRU1rZndF0T8zrfCUVZzbW"
-          target="_blank">WhatsApp
-          group</a>.</p>
-      <br>
-
-      <ul class="classes-list">
-        <li><strong>Friday :</strong> Evening 5.00pm to 6.30pm</li>
-        <li><strong>Saturday :</strong> Evening 4.30pm to 6.30pm</li>
-        <li><strong>Sunday :</strong> Morning 10.00am to 12.00pm</li>
-      </ul>
-
-    </div>
-  </section>
-
-
-  <!-- <section class="gallery" id="gallery">
-    <h1>Gallery</h1>
-    <br>
-
-    <div class="gallery-grid">
-
-      <div class="gallery-item">
-        <video controls muted>
-          <source src="assets/reel1.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      <div class="gallery-item">
-        <video controls muted>
-          <source src="assets/reel2.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      <div class="gallery-item">
-        <video controls muted>
-          <source src="assets/reel3.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-    </div> 
-
-    <br>
-    <br>
-    <br>
-
-
-    <p class="gallery-description">
-      Welcome to our <b>Dance Class Gallery!</b> Here, we showcase some of our most energetic and inspiring moments.
-      These
-      reels capture the essence of our sessions — from graceful moves and rhythmic footwork to the passion and
-      dedication of our dancers. Whether you're a beginner or a seasoned performer, these glimpses will show you the
-      fun, creativity, and community we bring to every class. Dive in and feel the rhythm!
-    </p>
-  </section>-->
-
-  <br>
-  <br>
-
-  <header class="contact-header" id="contact">
-    <h1>Contact Us</h1>
   </header>
 
-  <section class="contact-section">
-    <form class="contact-form" id="contactForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required />
+  <!-- About -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="h1 fw-bold text-center mb-3">
+        About <span class="text-warning">DanceWarriors</span>
+      </h2>
+      <p class="text-secondary text-center mx-auto mb-4" style="max-width:900px">
+        DanceWarriors Studio is not just a place to dance, it’s where you can learn discipline and creativity of
+        movement — let your passion take the stage! Our instructors bring styles from Bollywood to Hip-Hop, and
+        Freestyle to Contemporary.
+      </p>
+      <p class="text-secondary text-center mx-auto mb-4" style="max-width:900px">
+        Our studio is open to dancers of all levels — whether you're just starting or ready to take center stage. We
+        believe dance empowers expression, health, and joy.
+      </p>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
+      <div class="row g-4 align-items-center">
+        <div class="col-md-5">
+          <img src="assets/dance-master.jpg" class="w-100 rounded-4 border" alt="Lead Instructor">
+        </div>
+        <div class="col-md-6">
+          <h3 class="h3 fw-bold">
+            Meet Our Dance Master – <span class="text-secondary">B. Kamalesh</span>
+          </h3>
+          <p class="text-secondary">
+            With over 7 years of experience in the world of dance, Kamalesh is the heart of DanceWarriors Studio.
+            Trained
+            in Hip-Hop, Contemporary, and Bollywood styles, he brings unmatched energy, discipline, and creativity to
+            every session. His teaching approach blends fun with technique, inspiring dancers of all levels to push
+            their
+            limits while enjoying the journey.
+          </p>
+          <p class="fw-bold" style="font-size: 22px;">
+            Master Profile
+            <a style="text-decoration: none; color: rgb(95, 95, 95); font-weight: 900;"
+              href="https://www.instagram.com/_kmz_07/">
+              <i class="fab fa-instagram"></i> Kamalesh
+            </a>
+          </p>
 
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit">Send Message</button>
-    </form>
+         
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Toast Notification -->
-  <div id="toast" class="toast"></div>
-
-
-
-  <div class="address-list">
-    <li><strong>Email-id :</strong> kamaleshbalaji1349@gmail.com </li>
-    <li><strong>Phone no:</strong> 7904512516</li>
-  </div>
-  <div class="address-one">
-    <li><strong>Address :</strong> PKC COMPLEX SHOLAVARAM REDHILLS CHENNAI 67 Near by sholavaram bustand</li>
-  </div>
-
-
+  <!-- Marquee -->
   <br>
+  <marquee class="marquee-effect" behavior="scroll" direction="left">
+    "Dance is the hidden language of the soul."
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    "When you dance, your purpose is not to get to a certain place on the floor. It’s to enjoy each step along the way."
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    "Great dancers are not great because of their technique, they are great because of their passion."
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    "To watch us dance is to hear our hearts speak."
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    "Dance enables you to find yourself and lose yourself at the same time."
+  </marquee>
   <br>
 
+  <!-- Classes -->
+  <section id="classes" class="py-5">
+    <div class="container">
+      <h2 class="h1 fw-bold text-center mb-4">
+        Our <span class="text-warning">Classes</span>
+      </h2>
+      <p class="para">
+        Our regular classes are held on <strong>Friday</strong>, <strong>Saturday</strong>, and <strong>Sunday</strong>
+        every week.
+      </p>
+      <p class="para">
+        Click here to join the group
+        <a href="https://chat.whatsapp.com/JRU1rZndF0T8zrfCUVZzbW" target="_blank">WhatsApp group</a>.
+      </p>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="p-4 rounded-4 border h-100">
+            <h4 class="fw-bold">Friday :</h4>
+            <p class="mb-0 text-secondary">Evening 5.00pm to 6.30pm</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 rounded-4 border h-100">
+            <h4 class="fw-bold">Saturday :</h4>
+            <p class="mb-0 text-secondary">Evening 4.30pm to 6.30pm</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 rounded-4 border h-100">
+            <h4 class="fw-bold">Sunday :</h4>
+            <p class="mb-0 text-secondary">Morning 10.00am to 12.00pm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+<!-- Contact -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <h2 class="h1 fw-bold text-center mb-4">
+      Contact <span class="text-warning">Us</span>
+    </h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <form id="contactForm" class="p-4 rounded-4 border">
+          <div class="mb-3">
+            <label class="form-label fw-semibold" for="name">Name</label>
+            <input id="name" class="form-control" type="text" placeholder="Full Name" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold" for="email">Email</label>
+            <input id="email" class="form-control" type="email" placeholder="name@example.com" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold" for="message">Message</label>
+            <textarea id="message" class="form-control" rows="5" placeholder="Share your goals..."
+              required></textarea>
+          </div>
+          <button id="sendBtn" class="btn btn-contrast w-100" type="submit">
+            <span id="btnText">Send Message</span>
+            <span id="btnLoader" class="spinner-border spinner-border-sm ms-2 d-none" role="status"></span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Toast Notification -->
+<div id="toast"></div>
+
+
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-container">
-
-
       <div class="footer-brand">
         <h2>Dance Warriors</h2>
         <p>Feel the beat. Join the rhythm. Dance with us.</p>
+         <p class="fw-bold" style="font-size: 17px;">
+            Team
+            <a style="text-decoration: none; color: rgb(95, 95, 95); font-weight: 700;"
+              href="https://www.instagram.com/_tino_.x">Sebastin 🤝</a>
+          </p>
         <br>
-        <!-- <p style="font-weight: 400;"> Site made by <a style="text-decoration: none; color: rgb(54, 54, 54); font-weight: 600;" href="https://www.instagram.com/_tino_.x/"><i class="fab fa-instagram"></i> Sebastin</a></p> -->
-        <p>Team <a style="text-decoration: none; color: rgb(54, 54, 54); font-weight: 600;"
-            href="https://www.instagram.com/_tino_.x">Sebastin 🤝</a></p>
+
       </div>
 
       <!-- Quick Links -->
-      <div class="footer-links">
+      <!-- <div class="footer-links">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="#landing">Home</a></li>
+          <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#classes">Classes</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+      </div> -->
 
-      </div>
-
-      <!-- Social Media -->
+      <!-- Social -->
       <div class="footer-social">
         <h3>Connect With Us</h3>
         <div class="social-icons">
@@ -265,13 +247,18 @@
       </div>
     </div>
 
-
     <div class="footer-bottom">
-      <p> &copy; Made by <a href="https://mukeshthedev.netlify.app\">Mukesh ❤️</a></p>
+      <p  syle="font-size: 15px;">&copy; Made by <a style="font-size: 16px;"  href="https://mukeshthedev.netlify.app/">Mukesh ❤️</a></p>
     </div>
   </footer>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+  <!-- Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Theme + interactions -->
   <script src="script.js"></script>
 </body>
 
