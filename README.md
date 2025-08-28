@@ -25,14 +25,6 @@ Welcome to **DanceWarriors**, a simple and elegant dance studio landing page bui
 
 ---
 
-## Screenshot
-
-Here is a screenshot of my project:
-
-![Screenshot](assets/project-image3.png)
-
----
-
 ## 🙋‍♂️ Author
 
 🛠️ Site made by [Mukesh❤️](https://github.com/mukeshzzz)  
