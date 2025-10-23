@@ -107,7 +107,7 @@
     };
 
 
-    const webhookURL = "https://discord.com/api/webhooks/1398705815912714251/n10B50rZ5nxMnhmvj6u-dZ1zPScFYJUzncnlSr_mFdpLLA2s9-G6SwBvwRxpLQSWU4RE"; // 🔴 Replace with your real webhook URL
+    const webhookURL = ""; // 🔴 Replace with your real webhook URL
 
     try {
       const response = await fetch(webhookURL, {
