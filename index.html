@@ -20,13 +20,18 @@
     rel="stylesheet">
 
   <!-- Website Icon -->
-   <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
 
   <!-- Styles -->
-   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+
+  <!-- Loader Screen -->
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+  </div>
 
 
 
@@ -64,7 +69,7 @@
   <header id="home" class="hero text-center text-light" style="background-image:url('assets/black.png');">
     <div class="container">
       <h1 class="display-4 fw-bold">“Dance is the hidden language of the soul.”</h1>
-      <p class="lead opacity-75 mx-auto" style="max-width:800px">
+      <p class="lead opacity-80 mx-auto" style="max-width:800px">
         A dance class offers a unique blend of physical activity and creative expression. It provides an opportunity
         to learn new movements, improve coordination, and develop a deeper understanding of various dance styles
       </p>
@@ -115,12 +120,37 @@
               <i class="fab fa-instagram"></i> Kamalesh
             </a>
           </p>
-
-         
         </div>
       </div>
     </div>
   </section>
+
+  <br>
+
+
+  <div class="review-list">
+    <h2 class="h1 fw-bold text-center mb-4">
+      What Our<span class="text-warning">Dancers </span> Say</h2>
+    <br>
+    <div class="review-container">
+      <div class="review-card">
+        <div class="reviewer-name">Divesh</div>
+        <div class="review-text">“Fun environment, supportive team, DanceWarriors feels like family.”</div>
+      </div>
+
+      <div class="review-card">
+        <div class="reviewer-name">Kavin</div>
+        <div class="review-text">“Friendly vibe, excellent coaching, dance skills improve fast.”</div>
+      </div>
+
+      <div class="review-card">
+        <div class="reviewer-name">Rahul</div>
+        <div class="review-text">“Amazing energy, talented instructors, learning here is fun.”</div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
 
   <!-- Marquee -->
   <br>
@@ -135,6 +165,8 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     "Dance enables you to find yourself and lose yourself at the same time."
   </marquee>
+
+  <br>
   <br>
 
   <!-- Classes -->
@@ -174,40 +206,43 @@
     </div>
   </section>
 
-<!-- Contact -->
-<section id="contact" class="py-5">
-  <div class="container">
-    <h2 class="h1 fw-bold text-center mb-4">
-      Contact <span class="text-warning">Us</span>
-    </h2>
-    <div class="row justify-content-center">
-      <div class="col-lg-7">
-        <form id="contactForm" class="p-4 rounded-4 border">
-          <div class="mb-3">
-            <label class="form-label fw-semibold" for="name">Name</label>
-            <input id="name" class="form-control" type="text" placeholder="Full Name" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label fw-semibold" for="email">Email</label>
-            <input id="email" class="form-control" type="email" placeholder="name@example.com" required>
-          </div>
-          <div class="mb-3">
-            <label class="form-label fw-semibold" for="message">Message</label>
-            <textarea id="message" class="form-control" rows="5" placeholder="Share your goals..."
-              required></textarea>
-          </div>
-          <button id="sendBtn" class="btn btn-contrast w-100" type="submit">
-            <span id="btnText">Send Message</span>
-            <span id="btnLoader" class="spinner-border spinner-border-sm ms-2 d-none" role="status"></span>
-          </button>
-        </form>
+  <br>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="h1 fw-bold text-center mb-4">
+        Contact <span class="text-warning">Us</span>
+      </h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <form id="contactForm" class="p-4 rounded-4 border">
+            <div class="mb-3">
+              <label class="form-label fw-semibold" for="name">Name</label>
+              <input id="name" class="form-control" type="text" placeholder="Full Name" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold" for="email">Email</label>
+              <input id="email" class="form-control" type="email" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-semibold" for="message">Message</label>
+              <textarea id="message" class="form-control" rows="5" placeholder="Share your goals..."
+                required></textarea>
+            </div>
+            <button id="sendBtn" class="btn btn-contrast w-100" type="submit">
+              <span id="btnText">Send Message</span>
+              <span id="btnLoader" class="spinner-border spinner-border-sm ms-2 d-none" role="status"></span>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Toast Notification -->
-<div id="toast"></div>
+  <!-- Toast Notification -->
+  <div id="toast"></div>
+
 
 
 
@@ -219,7 +254,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-6">
           <div class="p-4 rounded-4 border bg-transparent">
-            
+
             <!-- Address -->
             <div class="d-flex align-items-start mb-3 ">
               <i class="bi bi-geo-alt-fill fs-3 me-3"></i>
@@ -232,7 +267,8 @@
             <!-- Email -->
             <div class="d-flex align-items-center mb-3">
               <i class="bi bi-envelope-fill fs-3 me-3"></i>
-              <a style="color: rgb(112, 112, 112);" href="mailto:kamaleshbalaji1349@gmail.com" class="fw-semibold text-decoration-none">
+              <a style="color: rgb(112, 112, 112);" href="mailto:kamaleshbalaji1349@gmail.com"
+                class="fw-semibold text-decoration-none">
                 kamaleshbalaji1349@gmail.com
               </a>
             </div>
@@ -259,11 +295,11 @@
       <div class="footer-brand">
         <h2>Dance Warriors</h2>
         <p>Feel the beat. Join the rhythm. Dance with us.</p>
-         <p class="fw-bold" style="font-size: 17px;">
-            Team
-            <a style="text-decoration: none; color: rgb(95, 95, 95); font-weight: 700;"
-              href="https://www.instagram.com/_tino_.x">Sebastin 🤝</a>
-          </p>
+        <p class="fw-bold" style="font-size: 17px;">
+          Team
+          <a style="text-decoration: none; color: rgb(95, 95, 95); font-weight: 700;"
+            href="https://www.instagram.com/_tino_.x">Sebastin 🤝</a>
+        </p>
         <br>
 
       </div>
@@ -291,7 +327,8 @@
     </div>
 
     <div class="footer-bottom">
-      <p  syle="font-size: 15px;">&copy; Made by <a style="font-size: 16px;"  href="https://mukeshthedev.netlify.app/">Mukesh ❤️</a></p>
+      <p syle="font-size: 15px;">&copy; Made by <a style="font-size: 16px;"
+          href="https://mukeshthedev.netlify.app/">Mukesh ❤️</a></p>
     </div>
   </footer>
 
@@ -304,5 +341,4 @@
   <!-- Theme + interactions -->
   <script src="script.js"></script>
 </body>
-
 </html>
