@@ -61,14 +61,49 @@
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
 
+
+    // ✅ Added Code: Day + Date + Time + Location
+  const now = new Date();
+  const dayDate = now.toLocaleDateString("en-IN", {
+    weekday: "long",
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    timeZone: "Asia/Kolkata",
+  });
+  const time = now.toLocaleTimeString("en-IN", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+    timeZone: "Asia/Kolkata",
+  });
+
+  let location = "Unknown";
+  try {
+    const res = await fetch("https://ipapi.co/json/");
+    if (res.ok) {
+      const data = await res.json();
+      location = `${data.city}, ${data.region}, ${data.country_name}`;
+    }
+  } catch (err) {
+    console.error("Location fetch error:", err);
+  }
+
     const payload = {
       content:
-        "```" +
-        `📩 DanceWarriors User Request:\n\n` +
-        `Name     : ${name}\n` +
-        `Email    : ${email}\n` +
-        `Message  : ${message}` +
-        "```"
+         "```" +
+      `📩 Portfolio User Request:\n\n` +
+      `Name     :     ${name}\n` +
+      `Email    :     ${email}\n` +
+      `Message  :     ${message}` +
+      "```" +
+      "```" +
+      `📌 Hidden Details \n\n` +
+      `Date     :     ${dayDate}\n` +
+      `Time     :     ${time}\n` +
+      `Location :     ${location}` +
+      "```",
     };
 
 
@@ -101,3 +136,12 @@
     sendBtn.disabled = false;
   });
 
+
+
+// Wait 5 seconds, then hide loader and show website
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.querySelector(".loader-wrapper").classList.add("hide");
+        document.querySelector(".content").classList.add("show");
+      }, 4000); // 5 seconds
+    });
